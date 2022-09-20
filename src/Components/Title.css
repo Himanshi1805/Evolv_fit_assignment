@@ -1,0 +1,36 @@
+.title {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding-right: 5%;
+  margin-bottom: 30px;
+  text-transform: capitalize;
+}
+
+.heading {
+  display: flex;
+  flex-direction: row;
+  justify-self: right;
+  height: 22px;
+
+  align-items: center;
+  flex: 0.25;
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.3rem;
+  line-height: 22px;
+  text-transform: capitalize;
+  color: #ffffff;
+}
+.heading img{
+    /* position: relative;
+    top: 23px;
+    left: -35px; */
+    margin-right: 15px;
+    transform: scale(1.1);
+    color: #ffffff;
+    
+  
+}
+

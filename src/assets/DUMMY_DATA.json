@@ -1,0 +1,59 @@
+
+{
+  "users": [
+    {
+      "userId": 1,
+      "name": "Charvie Sharma",
+      "email": "charviesharma@gmail.com",
+      "stepsWalked": 2547,
+      "stepsTarget": 4000,
+      "performedDate": "2022-10-15T11:20:55.000Z",
+      "scheduledDate": "2022-07-22T10:20:25.396Z",
+      "calorieIntake": 2547,
+      "calorieTarget": 2500,
+      "proteinConsumed": 45,
+      "proteinTarget": 70,
+      "carbConsumed": 70,
+      "carbTarget": 70,
+      "fatConsumed": 30,
+      "fatTarget": 70,
+      "feedback": true
+    },
+    {
+      "userId": 2,
+      "name": "Charvie Sharma",
+      "email": "charviesharma.cs@gmail.com",
+      "stepsWalked": 2547,
+      "stepsTarget": 4000,
+      "performedDate": "2022-10-15T11:20:55.000Z",
+      "scheduledDate": "2022-07-23T10:20:25.000Z",
+      "calorieIntake": 2547,
+      "calorieTarget": 2500,
+      "proteinConsumed": 45,
+      "proteinTarget": 70,
+      "carbConsumed": 50,
+      "carbTarget": 70,
+      "fatConsumed": 30,
+      "fatTarget": 70,
+      "feedback": true
+    },
+    {
+      "userId": 3,
+      "name": "Charvie Sharma",
+      "email": "charviesharma@gmail.com",
+      "stepsWalked": 2547,
+      "stepsTarget": 4000,
+      "performedDate": "2022-10-15T11:20:55.000Z",
+      "scheduledDate": "2022-07-24T10:20:25.000Z",
+      "calorieIntake": 2547,
+      "calorieTarget": 2500,
+      "proteinConsumed": 45,
+      "proteinTarget": 70,
+      "carbConsumed": 50,
+      "carbTarget": 70,
+      "fatConsumed": 30,
+      "fatTarget": 70,
+      "feedback": false
+    }
+  ]
+}

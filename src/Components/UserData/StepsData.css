@@ -1,0 +1,20 @@
+.steps{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    /* width: 100px; */
+    height: 80px;
+    align-items: center;
+    flex: 0.7;
+   
+
+}
+
+  .progress-bar {
+    transform: scale(0.2);
+   
+  }
+  .extra{
+    width: 70;
+    height: 70;  
+  }

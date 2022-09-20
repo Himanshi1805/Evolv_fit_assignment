@@ -1,0 +1,54 @@
+.users {
+  /* position: relative;
+  left: 10px;
+  top: 70px; */
+  width: 80vw;
+  height: 90px;
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+  background-color: #1e262f;
+  border-radius: 10px;
+  margin: 10px 0;
+  justify-content: space-between;
+  align-items: center;
+
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  /* margin-right: 30px;
+  padding-right: 10px; */
+  /* position: absolute;
+  left: 80px; */
+}
+.email {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 12px;
+  color: #bdbcbe;
+  margin-top: 5px;
+}
+
+.user-img {
+  /* position: absolute;
+  left: 20px; */
+  transform: scale(1.2);
+  padding: 5px 12px;
+}
+
+.bell{
+    padding: 14px 5px;
+    
+    background: #36F5C7;
+    border-radius: 10px;
+    cursor: pointer;
+    flex-wrap: wrap;
+    flex: 0.12;
+    margin: 10px 10px 10px 40px;
+}
+.bell-img{
+    transform: scale(1.3);
+}

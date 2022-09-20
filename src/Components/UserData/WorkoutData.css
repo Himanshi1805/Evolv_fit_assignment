@@ -1,0 +1,59 @@
+.workout{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    flex: 0.4;
+    
+}
+.workout img{
+    transform: scale(1.2);
+}
+
+.workout p{
+    font-weight: 600;
+    font-size: 17px;
+    margin-left: 10px;
+}
+
+.date{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+.date span{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 10px;
+    border-radius: 8px;
+}
+.arrow{
+    display: inline-block;
+    padding: 30px 18px;
+    border-radius: 8px;
+    background-color: #101317;
+    color: white;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.feedback_btn{
+    display: inline-block;
+    padding: 30px 18px;
+    border-radius: 8px;
+    background-color: #CC3838;
+    color: white;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.alert{
+    display: inline-block;
+    padding: 10px 7px;
+    border-radius: 4px;
+    background-color: #CC3838;
+    color: white;
+    cursor: pointer;
+   
+}

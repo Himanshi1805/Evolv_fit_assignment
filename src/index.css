@@ -1,0 +1,23 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background-color: #272e37;
+  color: white;
+  font-family: 'Montserrat';
+  line-height: 12px;
+  align-items: center;
+}
+.App{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center ;
+}
+
+.extra{
+  font-size: 0.6rem;
+  margin-top: 20%;
+}
