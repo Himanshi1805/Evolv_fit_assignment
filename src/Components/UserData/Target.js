@@ -1,4 +1,4 @@
-import React, {useState, useCallback} from 'react';
+import React, {useState} from 'react';
 import Plus from '../../assets/plus.svg';
 import Minus from '../../assets/minus.svg';
 
@@ -13,7 +13,7 @@ const Target = ({currVal, newVal, userId}) => {
   };
 
   const decrementHandler = () => {
-    setTarget((prevVal) => (prevVal > 0.5 ? prevVal + newVal : 0));
+    setTarget((prevVal) => (prevVal > 0.5 ? prevVal - newVal : 0));
     // newData();
   };
 
@@ -27,6 +27,22 @@ const Target = ({currVal, newVal, userId}) => {
   //   } catch (err) {}
   // }, [target, userId]);
 
+  // const updateSteps = useCallback(async () => {
+  //   try {
+  //     await fetch(`http://localhost:5000/api/home/${data.userId}/steps`, {
+  //       method: "PUT",
+  //       body: JSON.stringify({ stepsTarget: steps, id: data.userId }),
+  //       headers: { "Content-Type": "application/json" },
+  //     });
+  //   } catch (err) {}
+  // }, [steps, data.userId]);
+
+  // const stepIncrementHandler = () => {
+  //   setSteps((prevSteps)=>(Number(prevSteps) + 0.5).toFixed(1));
+  //   updateSteps();
+  // };
+
+  
   return (
     <div className="target">
       <button onClick={incrementHandler}>

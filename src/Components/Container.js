@@ -3,6 +3,8 @@ import './Container.css';
 import Title from './Title';
 import Users from './Users';
 const Container = () => {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  window.addEventListener("resize", () => setWindowWidth(window.innerWidth));
 
   const [loadedUsers, setLoadedUsers] = useState([]);
 
@@ -23,15 +25,15 @@ const Container = () => {
 
   useEffect(()=>{
       sendRequest();
-  },[]);
+  },[sendRequest]);
 
 
     return (
         <div className="container">
-            <Title/>
+            {windowWidth >995 && <Title/>}
             {loadedUsers.map((user, index) => (
         
-          <Users key={user.userId} index={index} loadedUsers={loadedUsers} />
+          <Users windowWidth={windowWidth} key={user.userId} index={index} loadedUsers={loadedUsers} />
         
             ))}
           

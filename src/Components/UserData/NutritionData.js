@@ -1,4 +1,6 @@
-import React, {useState} from 'react';
+import React, {useState, useCallback} from 'react';
+import Plus from "../../assets/plus.svg";
+import Minus from "../../assets/minus.svg";
 import './NutritionData.css';
 import {PieChart} from 'react-minimal-pie-chart';
 import Arrow from '../../assets/arrow.svg';
@@ -9,10 +11,10 @@ import "tippy.js/dist/tippy.css";
 import Tooltip from "./Tooltip";
 
 
-const NutritionData = ({index, loadedUsers}) => {
+const NutritionData = ({index, loadedUsers,isMobile}) => {
   const [showTooltip, setShowTooltip] = useState(false);
 
-  const userId = loadedUsers[index].userId;
+  const userId = loadedUsers[index].id;
   const proteinConsumed = loadedUsers[index].proteinConsumed;
   const proteinTarget = loadedUsers[index].proteinTarget;
   const fatConsumed = loadedUsers[index].fatConsumed;
@@ -20,10 +22,10 @@ const NutritionData = ({index, loadedUsers}) => {
   const carbConsumed = loadedUsers[index].carbConsumed;
   const carbTarget = loadedUsers[index].carbTarget;
   const calorieIntake = loadedUsers[index].calorieIntake;
-  const calorieTarget = loadedUsers[index].calorieTarget;
+  const calorieTarget = (loadedUsers[index].calorieTarget)/1000;
 
   const totalConsumed = proteinConsumed + fatConsumed + carbConsumed;
-
+  const [calories, setCalories] = useState(calorieTarget);
   const macros = [
     {
       name: "PROTEIN",
@@ -45,9 +47,35 @@ const NutritionData = ({index, loadedUsers}) => {
     },
   ];
 
+  const newData = useCallback(async () => {
+    try {
+      await fetch(`http://localhost:5000/api/users/${userId}/calories`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ calorieTarget: calories, userId: userId }),
+      });
+    } catch (err) {}
+  }, [calories, userId]);
+
+  const incrementHandler = () => {
+    setCalories((Number(calories) + Number(0.5)).toFixed(1));
+    newData();
+  };
+
+  const decrementHandler = () => {
+    if (calories > 0.5) {
+      const newCalories = calories - 0.5;
+      setCalories(newCalories);
+    } else {
+      setCalories(0);
+    }
+    newData();
+  };
+
+
   return (
     <div className="nutrition">
-    <Tippy visible={showTooltip} placement="bottom" content={<Tooltip macros={macros} />}>
+    <Tippy visible={showTooltip} placement={`${isMobile ? "right" : "bottom"}`} content={<Tooltip macros={macros} />}>
         <span
           onMouseOver={() => setShowTooltip(true)}
           onMouseOut={() => setShowTooltip(false)}
@@ -90,8 +118,19 @@ const NutritionData = ({index, loadedUsers}) => {
         <p className="calorie">calorie</p>
       </span>
        </Tippy> 
-      <Target currVal={calorieTarget} newVal={100} />
-
+       <div className="target">
+        <button onClick={incrementHandler}>
+          <img src={Plus} alt="increase" />
+        </button>
+        <span>
+          <h2>{calories}k</h2>
+          <p style={{ letterSpacing: "1px" }}>target</p>
+        </span>
+        <button onClick={decrementHandler}>
+          <img src={Minus} alt="decrease" />
+        </button>
+      </div>
+  
       <Link to={`/${userId}/nutrition`}>
         <button className="arrow">
           <img src={Arrow} alt="arrow" />
